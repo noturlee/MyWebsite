@@ -1,0 +1,1026 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1494319827402-c4b839aed26b?q=80&w=3269&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    color: #494949;
+    font-family: Arial, sans-serif;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    background-attachment: fixed;
+}        
+
+.content {
+    padding: 20px;
+    border-radius: 10px;
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content h1 {
+    font-size: 114px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    margin-left: 60px;
+    color: #099B13;
+}
+
+/* Second h1 color */
+.content h1:nth-of-type(2) {
+    color: #838D68;
+}
+
+h1 {
+    font-size: 114px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    color: #099B13;
+}
+p1 {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.6rem 2rem;
+    margin-top: 23px;
+    font-weight: 600;
+    color: #494949;
+    background: none;
+    border: 6px solid #FF9900;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+    margin-left: 60px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content (PDF Viewer) */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#pdfViewer {
+    width: 80vh;
+    height: 80vh;
+    border: none;
+    background: white;
+}
+
+
+
+
+/* Disable Screenshot (Attempts to prevent it) */
+.modal-content {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+/* PDF Embed */
+.modal-content .iframe {
+    width: 80vh;
+    height: 80vh;
+    border: none;
+    background: white;
+}
+
+.liquid {
+    background: linear-gradient(#FF9900 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.2em);
+    transition: 0.3s var(--t, 0s), background-position 0.3s calc(0.3s - var(--t, 0s));
+}
+.liquid:hover {
+    --p: 100%;
+    --t: 0.3s;
+    color: #fff;
+}
+.btn i {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #4ABC96;
+    color: white;
+    font-size: 16px;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gif-container {
+    margin-top: 100px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: rgb(69, 69, 69);
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -15px); }
+}
+
+.split-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.left-half {
+    scroll-snap-align: start;
+    background-color: #013A20;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-half .content-wrapper {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%; /* Adjust to your desired width */
+    height: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-half {
+    scroll-snap-align: start;
+    background-color: white;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-half .content-wrapper {
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+p{
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    font-family: 'Spartan League', Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.glitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* Centers the button horizontally */
+    margin-top: 10%;
+}
+
+  .glitch:hover {
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-4px, 4px);
+    }
+    40% {
+      transform: translate(-4px, -4px);
+    }
+    60% {
+      transform: translate(4px, 4px);
+    }
+    80% {
+      transform: translate(4px, -4px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  iframe {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 20px; /* Adjust the value for more or less rounding */
+    border-color: #478C5C;
+    overflow: hidden;
+}
+
+.awards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 80%;
+    overflow-y: auto; /* Adds scroll if needed */
+    margin-top: 8%;
+}
+
+.award-card {
+    background-color: #F8F8F8;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.051);
+    border-left: 5px solid #478C5C;
+    transition: border-left-color 0.3s ease, transform 0.3s ease;
+}
+
+.award-card:hover {
+    border-left-color: #FF9900;
+    transform: translateX(5px);
+}
+
+
+.award-card h3 {
+    font-size: 18px;
+    color: #838D68;
+    margin: 0;
+    text-align: left;
+}
+
+.award-card p {
+    font-size: 16px;
+    color: #494949;
+    margin: 5px 0 0;
+    text-align: left;
+    font-family: "League Spartan", sans-serif;
+}
+
+.certification-section {
+    background-image: url('./certbg.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to the top */
+    padding-top: 30px; /* Adjust as needed */
+}
+
+.certification-section h1 {
+    font-size: 114px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    color: #013A20;
+}
+
+.academia-left, .initiative-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.academia-left {
+    background-color: #FFFFFF;
+}
+
+.initiative-right {
+    background-color: #478C5C;
+}
+
+.content-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+}
+
+
+.initiative-right ul {
+    list-style: none;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+}
+
+.initiative-right ul li {
+    margin: 10px 0;
+}
+
+
+/* Academia Card Styling */
+.academic-card {
+background: #FFF;
+border: 6px solid #838D68;
+border-radius: 31px;
+padding: 15px;
+margin: 15px 0;
+text-align: left;
+width: 90%;
+box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.academic-card:first-of-type {
+margin-top: 10%;
+}
+
+.academic-card h3 {
+color: #478C5C;
+margin-bottom: 10px;
+font-size: 20px;
+}
+
+/* Initiative Card Styling */
+.initiative-card {
+background: rgba(255, 255, 255, 0.1);
+border: 6px solid #099B13;
+border-radius: 50px;
+padding: 10px;
+margin: 10px auto;  /* Centers the card horizontally */
+text-align: center;
+width: 80%;  /* Adjust width for responsiveness */
+color: #494949;
+box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+align-items: center; /* Ensures text inside stays centered */
+justify-content: center; /* Centers content vertically if needed */
+}
+
+.initiative-card:hover {
+border-color: #FF9900;
+transition: 500ms;
+}
+/* Apply margin-top to only the first initiative card */
+.initiative-card:first-of-type {
+margin-top: 10%;
+}
+
+.initiative-card p {
+font-size: 16px;  /* Adjust text size for readability */
+color: #494949;  /* Dark gray for contrast */
+line-height: 1.5;  /* Better spacing between lines */
+margin-bottom: 10px;  /* Space between paragraphs */
+font-weight: 400;  /* Normal font weight */
+text-align: left;  /* Aligns text for better readability */
+font-family: "Spartan League", sans-serif;
+
+}
+
+.academic-card p {
+font-size: 16px;  /* Adjust text size for readability */
+color: #494949;  /* Dark gray for contrast */
+line-height: 1.5;  /* Better spacing between lines */
+margin-bottom: 10px;  /* Space between paragraphs */
+font-weight: 400;  /* Normal font weight */
+text-align: left;  /* Aligns text for better readability */
+font-family: "Spartan League", sans-serif;
+
+}
+
+
+.initiative-card h3 {
+font-size: 1.2em;
+margin-bottom: 5px;
+color: #494949;
+}
+
+
+.projects-section {
+text-align: center;
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 100vh;
+padding: 0 50px; /* Adds some padding for better container behavior */
+background-color: #ffffff;
+}
+
+.projects-section h1 {
+margin-top: 4%;
+margin-bottom: 10px;
+font-size: 114px;
+font-family: 'Bricolage Grotesque', sans-serif;
+font-weight: bold;
+color: #099B13;
+}
+
+.projects-section h3 {
+font-size: 1.5em;
+color: #6A6A6A;
+margin-bottom: 30px;
+}
+
+/* Container for the cards */
+.projects-container {
+display: flex;
+justify-content: center; /* Center the cards container horizontally */
+gap: 20px;
+overflow-x: auto; /* Enables horizontal scrolling */
+scroll-snap-type: x mandatory; /* Ensures smooth snapping behavior */
+width: 100%; /* Full width */
+max-width: 1200px; /* Limits the width of the container to ensure proper layout */
+margin: 0 auto; /* Centers the container itself */
+padding: 10px 0; /* Adds padding around the container */
+box-sizing: border-box;
+-webkit-overflow-scrolling: touch; /* For smooth scrolling on mobile */
+}
+
+/* Style for each individual project card */
+.project-card {
+background-color: #013A20;  /* Default color */
+border-radius: 22px;
+padding: 20px;
+text-align: center;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+position: relative;
+scroll-snap-align: start; /* Ensures each card snaps into place when scrolling */
+flex-shrink: 0;  /* Prevents the cards from shrinking */
+transition: transform 0.3s ease;
+cursor: grab;
+font-family: "League Spartan", sans-serif;
+margin-top: 5%;
+background-color: #013A20;
+padding: 20px;
+border-radius: 18px;
+width: 300px; /* Adjust as needed */
+height: 400px; /* Ensures consistent height for all cards */
+display: flex;
+flex-direction: column;
+justify-content: space-between; /* Pushes button to bottom */
+align-items: center;
+text-align: center;
+
+}
+
+
+
+.projects-section h4 {
+font-size: 1.7em;
+color: white;
+margin-bottom: 10px;
+}
+
+.project-card p {
+    margin-top: 40px;
+color: #f1f1f1;
+font-size: 25px;
+margin-bottom: 20px;
+font-family: "League Spartan", sans-serif;
+font-weight: 400;
+text-align: left;
+}
+
+/* Button Styling */
+.project-btn {
+background-color: white;
+border: none;
+color: #013A20;
+padding: 10px 20px;
+border-radius: 12px;
+cursor: pointer;
+font-weight: bold;
+font-size: 1em;
+}
+
+/* Hover effect for buttons */
+.project-btn:hover {
+background-color: #013A20;
+color: white;
+}
+
+/* Specific Colors for Some Cards */
+.project-card:nth-child(2), 
+.project-card:nth-child(6) {
+background-color: #FF9900; /* Orange Button */
+}
+
+.project-card:nth-child(1), 
+.project-card:nth-child(3), 
+.project-card:nth-child(4), 
+.project-card:nth-child(5), 
+.project-card:nth-child(7), 
+.project-card:nth-child(8) {
+background-color: #013A20; /* Green Button */
+}
+
+.contact-section {
+    background: url('./contactbg.png') no-repeat center center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    width: 100%;
+height: 100vh;
+}
+
+.contact-section h1 {
+    font-size: 114px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #494949;
+    margin-bottom: 30px;
+}
+
+.contact-form-container {
+    background: rgba(200, 200, 200, 0.3); /* Greyish transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #FFDBA5;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background: #02600C;
+    transition: 400ms;
+}
+
+
+/* 🎨 Style for Social Media Icons */
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #099B13; /* Green color to match theme */
+    font-size: 30px;
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FF9900; /* Orange on hover */
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 480px) {
+
+ /* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #494949;
+    font-family: Arial, sans-serif;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    background-attachment: fixed;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+.content {
+    background: url('https://images.unsplash.com/photo-1524055988636-436cfa46e59e?q=80&w=2741&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+                no-repeat center center/cover;
+    padding: 5%;
+    border-radius: 10px;
+    scroll-snap-align: start;
+    min-height: 100vh;  /* Full viewport height */
+    width: 100%;  /* Full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* 💡 Fix: Align content to the left */
+    text-align: left; /* Ensure text inside is also left-aligned */
+}
+
+/* Style for both h1 elements */
+.content h1 {
+    font-size: 60px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    margin-left: 20px;
+    color: #099B13;
+}
+
+/* Second h1 color */
+.content h1:nth-of-type(2) {
+    color: #838D68;
+}
+
+/* Ensure paragraph is left-aligned */
+p1 {
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+/* 🎯 Only applies to buttons inside .content */
+.content .btn {
+    padding: 10px 20px;
+    font-size: clamp(14px, 4vw, 20px);
+    border: 4px solid #FF9900;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "League Spartan", sans-serif;
+    width: fit-content;
+    margin-left: 20px; /* Move button to the left */
+    margin-top: 20px;
+    margin-bottom: 100px; /* ✅ Ensures spacing below */
+}
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: clamp(14px, 4vw, 20px);
+    border: 4px solid #FF9900;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "League Spartan", sans-serif;
+    width: fit-content;
+    margin-left: 20px; /* 💡 Fix: Move button to the left */
+    margin-top: 20px;
+}
+
+
+.container {
+    display: block;
+}
+
+.split-section {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    width: 100%;
+    height: 200vh; /* Total height for both sections (2 screens) */
+}
+
+.left-half, .right-half {
+    width: 100%;
+    height: 100vh; /* Each section takes up one full screen */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.certification-section {
+    background-image: url('./phonebg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+
+
+.certification-section h1 {
+    font-size: 62px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    color: #cb984d;
+}
+
+.academia-section, .initiative-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200vh; /* Two full screens */
+}
+
+.academia-left, .initiative-right {
+    width: 100%;
+    height: 100vh; /* Each takes up a full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.content-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 10vw; /* Responsive padding */
+    width: 90%;
+    max-width: 800px; /* Prevents it from being too wide */
+    height: auto;
+    text-align: center;
+}
+
+.content-wrapper h1 {
+    font-size: 80px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+}
+
+/* Adjust font sizes for responsiveness */
+.academic-card h3, .initiative-card h3 {
+    font-size: clamp(18px, 2vw, 24px); /* Scales between 18px-24px */
+}
+
+
+
+.initiative-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 6px solid #099B13;
+    border-radius: 10px;
+    margin: 10px auto;  /* Centers the card horizontally */
+    text-align: center;
+    color: #494949;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures text inside stays centered */
+    justify-content: center; /* Centers content vertically if needed */
+    width: 100%; /* Use full width */
+    max-width: 600px; /* Prevents it from being too wide */
+    padding: 2vw; /* Adjust padding responsively */
+    }
+
+.academic-card, .initiative-card {
+    width: 100%; /* Use full width */
+    max-width: 600px; /* Prevents it from being too wide */
+    padding: 2vw; /* Adjust padding responsively */
+}
+
+.academic-card p, .initiative-card p {
+    font-size: clamp(14px, 1.8vw, 18px); /* Responsive text size */
+}
+
+/* Ensure lists scale correctly */
+.initiative-right ul {
+    font-size: clamp(16px, 1.8vw, 20px);
+}
+
+.academia-left h1, .initiative-right h1 {
+    font-size: clamp(54px, 4vw, 40px); /* Responsive font size */
+    color: #478C5C; /* Keeps the original green */
+    text-align: center;
+    font-weight: 700; /* Makes it bold */
+    font-family: 'Bricolage Grotesque', sans-serif;
+
+
+}
+.projects-section {
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh; /* Each takes up a full screen */
+    min-height: 100vh; /* Ensures it fills the screen */
+    max-width: 600px; /* Prevents it from being too wide */    
+    background-color: #ffffff;
+    }
+    
+
+.projects-section h1 {
+    font-size: 80px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    color: #099B13;
+    text-align: center;
+}
+
+.projects-section h3 {
+    font-size: 1.2em;
+    color: #494949;
+    margin-bottom: 10px;
+    }
+
+.projects-container {
+    flex-direction: row; /* Keeps horizontal layout */
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.project-card {
+    width: 70vw; /* Bigger on mobile */
+    max-width: 320px;
+    height: 500px;
+}
+
+.contact-section {
+    background: url('./contactbgm.png') no-repeat center center/cover;
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+    min-height: 130vh; /* Ensures it fills the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section h1 {
+    font-size: 75px; /* Reduced for mobile-friendliness */
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: bold;
+    color: #099B13;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #494949;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Contact form container */
+.contact-form-container {
+    width: 90%; /* Full width on small screens */
+    max-width: 500px; /* Limits the form size */
+}
+
+/* Contact form fields */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+
+    border-radius: 8px;
+
+}
+
+/* Textarea height */
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Contact button */
+.contact-form button {
+    background: #FF9900;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #02600C;
+}
+
+
+}
+
+@media (min-width: 768px) {
+
+}

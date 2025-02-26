@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Leighché Jaikarran</title>
+</head>
+<body>
+    <div class="content">
+        <h1 >LEIGHCHÉ</h1>
+        <h1 >JAIKARRAN</h1>
+        <p1>BA @Amazon | Hons Data Sci | HCI Research</p1>
+        <button class="btn liquid">
+            <span>Download CV</span>
+            <i class="fas fa-download"></i>
+        </button>
+        <div class="scroll-down">&#x21d3;</div>
+    </div>
+
+    <!-- New section split into two halves -->
+    <div class="split-section">
+        <div class="left-half">
+            <!-- Content for the green section -->
+            <div class="content-wrapper">
+                <h1 style="color: #478C5C; text-align: center; font-size:60px;">Research</h1>
+                <p>I love engaging in HCI, IOT & ML research</p>
+                <button id="openPdfBtn" class="btn glitch">
+                    <span>View My Research</span>
+                    <i class="fas fa-book"></i>
+                </button>
+                
+
+                <div id="pdfModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <iframe id="pdfViewer" 
+                                src="https://drive.google.com/file/d/19eIuTOzh52wEjyEjiabjDERDLmrwqqpr/preview" 
+                                width="100%" height="600px"></iframe>
+                    </div>
+                </div>
+                               
+
+                  <iframe width="560" height="315" 
+                  src="https://www.youtube.com/embed/lt9_zamoa14" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+              </iframe>
+            </div>
+        </div>
+
+        <div class="right-half">
+            <div class="content-wrapper">
+                <h1 style="color: #013A20; text-align: center;">Awards</h1>
+                <div class="awards-container">
+                    <div class="award-card">
+                        <h3>3x Aggregate Distinction Award</h3>
+                        <p>Issued by Varsity College</p>
+                        <p><strong>Feb 2023</strong></p>
+                    </div>
+                    <div class="award-card">
+                        <h3>Golden Key International Honours Award</h3>
+                        <p>Issued by Golden Key International Honour Society</p>
+                        <p><strong>Apr 2024</strong></p>
+                    </div>
+                    <div class="award-card">
+                        <h3>BET Software Dare to Dream Bursary</h3>
+                        <p>Issued by BET Software</p>
+                        <p><strong>Mar 2023</strong></p>
+                    </div>
+                    <div class="award-card">
+                        <h3>Postgraduate Academic Award</h3>
+                        <p>Issued by Varsity College</p>
+                        <p><strong>Oct 2024</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    </div>
+
+        <!-- Certificate section  -->
+        <div class="certification-section">
+            <h1>18X Certified</h1>
+        </div>
+
+
+        <!-- Education section -->
+
+        <!-- New Split Section -->
+        <div class="split-section">
+            <div class="academia-left">
+                <div class="content-wrapper">
+                    <h1 style="color: #478C5C; text-align: center;">Academia</h1>
+        
+                    <div class="academic-card">
+                        <h3>(BS) Bachelor of Science in Computer Science</h3>
+                        <p><strong>IIE Varsity College (DBN)</strong></p>
+                        <p>2021 - 2024</p>
+                        <p>Summa cum laude grad (97%!), general degree in programming, web/mobile, cloud, databases, IOT, comp eng.</p>
+                    </div>
+        
+                    <div class="academic-card">
+                        <h3>(PGDip) Postgraduate Diploma in Data Analytics</h3>
+                        <p><strong>IIE Varsity College (DBN)</strong></p>
+                        <p>2025 - Present</p>
+                        <p>Specialisation in Big Data, AI, ML, Statistics, and Data Visualization. Analyzing complex data for BI</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="initiative-right">
+                <div class="content-wrapper">
+                    <h1 style="color: #938F92; text-align: center;">Initiatives</h1>
+        
+                    <div class="initiative-card">
+                        <h3>SOIT Vice President</h3>
+                        <p>Varsity College</p>
+                    </div>
+        
+                    <div class="initiative-card">
+                        <h3>Head of Robotics</h3>
+                        <p>Varsity College</p>
+                    </div>
+        
+                    <div class="initiative-card">
+                        <h3>SATNAC Innovation Finalist</h3>
+                        <p>Telkom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="projects-section">
+            <h1>Projects</h1>
+            <h3>Explore the Latest Catalogue of my Creations</h3>
+    
+            <div class="projects-container" id="projects-container">
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <h4>Smarthydro</h4>
+                    <p>A smart hydroponics system that integrates IoT and AI to monitor and optimize plant growth. It provides real-time data on pH levels, temperature, and nutrient intake, ensuring efficient and sustainable farming</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <h4>Inkohlakalo Municipality</h4>
+                    <p>A digital solution designed to streamline municipal services, improving accessibility, enabling residents to report issues, access documents, and communicate.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <h4>Agri-Energy Connect</h4>
+                    <p>A platform connecting farmers with renewable energy providers to promote sustainable agriculture. It allows users to find, compare, and integrate green energy solutions into their farming operations.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 4 -->
+                <div class="project-card">
+                    <h4>MicroBit Remote</h4>
+                    <p>A mobile application that controls the Maqueen Plus v2 robot using a Micro:Bit and ESP-01 module. This project demonstrates the power of IoT in robotics and remote automation.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 5 -->
+                <div class="project-card">
+                    <h4>Azure Vehical Rental</h4>
+                    <p>A cloud-based vehicle rental management system utilizing Microsoft Azure services. It streamlines booking, payments, and fleet tracking while ensuring secure and scalable data storage.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 6 -->
+                <div class="project-card">
+                    <h4>AZ Function MedSyst</h4>
+                    <p>A medical records management system powered by Azure Functions. It facilitates secure data storage, quick retrieval, and seamless integration with healthcare systems for efficient patient care.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 7 -->
+                <div class="project-card">
+                    <h4>Sales Analysis</h4>
+                    <p>A data analytics project that visualizes sales trends, customer behavior, and revenue patterns using advanced BI tools. It helps businesses make data-driven decisions for growth and efficiency.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+                <!-- Card 8 -->
+                <div class="project-card">
+                    <h4>Librare.io</h4>
+                    <p>A digital library management system that allows users to browse, borrow, and manage books effortlessly. It integrates cloud storage and smart categorization for a seamless reading experience.</p>
+                    <button class="project-btn">View Project</button>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="contact-section">
+            <h1 style="color: #099B13; text-align: center;">Contact</h1>
+            <p>Let's discuss your project or inquiry. Fill out the form below.</p>
+            
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    
+                    <label for="service">Service / Enquiry Type</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Application Development">Application Development</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Cloud Development">Cloud Development</option>
+                        <option value="Database Development">Database/Systems Analysis & Design</option>
+                        <option value="Research Assisting">Research Assisting</option>
+                        <option value="IoT Integration">IoT Integration</option>
+                        <option value="AI Model">AI Model (NLP, LLM, etc.)</option>
+                    </select>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/leighché/" target="_blank" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/noturlee" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/noturleee/" target="_blank" class="icon-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
+        
+            
+        
+        <script src="script.js"></script>
+
+</body>
+</html>
+
