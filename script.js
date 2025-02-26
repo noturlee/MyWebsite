@@ -62,15 +62,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
  // Detect DevTools & Disable Modal
- (function() {
-    function detectDevTools() {
-        const widthThreshold = window.outerWidth - window.innerWidth > 160;
-        const heightThreshold = window.outerHeight - window.innerHeight > 160;
-
-        if (widthThreshold || heightThreshold) {
-            document.getElementById("pdfModal").style.display = "none"; // Hide modal
-            alert("Screen capture is disabled!");
-        }
-    }
-    setInterval(detectDevTools, 1000);
-})();
